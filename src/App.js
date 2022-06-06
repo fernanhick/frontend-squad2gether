@@ -1,10 +1,16 @@
 import logo from "./logo.svg";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
+import Login from "./components/Login";
+import { Route, Routes } from "react-router-dom";
 
 function App() {
     return (
-        <div className="App">
+        <Routes>
+            {" "}
+            <Route path="/" element={<Login />} />
+        </Routes>
+        /* <div className="App">
             <header className="App-header">
                 <img src={logo} className="App-logo" alt="logo" />
                 <p>
@@ -19,7 +25,7 @@ function App() {
                     Learn React
                 </a>
             </header>
-        </div>
+        </div> */
     );
 }
 
