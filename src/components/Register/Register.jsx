@@ -2,8 +2,8 @@ import React, { useRef, useState } from "react";
 import Form from "react-validation/build/form";
 import Input from "react-validation/build/input";
 import CheckButton from "react-validation/build/button";
-import { isEmail } from "validator";
-import AuthService from "../services/auth.service";
+import isEmail from "validator/lib/isEmail";
+import AuthService from "../../services/auth.service";
 
 // Create validation for value request in the input
 const required = (value) => {
@@ -126,7 +126,7 @@ const Register = () => {
                                     name="email"
                                     value={email}
                                     onChange={onChangeEmail}
-                                    validations={[require, validEmail]}
+                                    validations={[required, validEmail]}
                                 />
                             </div>
                             <div className="form-group">
@@ -161,6 +161,7 @@ const Register = () => {
                             </div>
                         </div>
                     )}
+                    <CheckButton style={{ display: "none" }} ref={checkBtn} />
                 </Form>
             </div>
         </div>

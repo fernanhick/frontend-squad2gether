@@ -1,31 +1,29 @@
-import logo from "./logo.svg";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
-import Login from "./components/Login";
 import { Route, Routes } from "react-router-dom";
-
+import { NavBar } from "./components/NavBar/NavBar";
+import Home from "./components/Home/Home";
+import Login from "./components/Login/Login";
+import Register from "./components/Register/Register";
+import Profile from "./components/Profile/Profile";
+import UserBoard from "./components/Boards/UserBoard/UserBoard";
+import ModeratorBoard from "./components/Boards/ModeratorBoard/ModeratorBoard";
+import AdminBoard from "./components/Boards/AdminBoard/AdminBoard";
 function App() {
     return (
-        <Routes>
-            {" "}
-            <Route path="/" element={<Login />} />
-        </Routes>
-        /* <div className="App">
-            <header className="App-header">
-                <img src={logo} className="App-logo" alt="logo" />
-                <p>
-                    Edit <code>src/App.js</code> and save to reload.
-                </p>
-                <a
-                    className="App-link"
-                    href="https://reactjs.org"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    Learn React
-                </a>
-            </header>
-        </div> */
+        <div className="App">
+            <NavBar />
+            <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/home" element={<Home />} />
+                <Route path="/login" element={<Login />} />
+                <Route path="/register" element={<Register />} />
+                <Route path="/profile" element={<Profile />} />
+                <Route path="/user" element={<UserBoard />} />
+                <Route path="/mod" element={<ModeratorBoard />} />
+                <Route path="/admin" element={<AdminBoard />} />
+            </Routes>
+        </div>
     );
 }
 

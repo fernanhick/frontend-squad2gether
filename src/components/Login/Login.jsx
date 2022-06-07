@@ -3,7 +3,7 @@ import React, { useRef, useState } from "react";
 import Form from "react-validation/build/form";
 import Input from "react-validation/build/input";
 import CheckButton from "react-validation/build/button";
-import AuthService from "../services/auth.service";
+import AuthService from "../../services/auth.service";
 
 // Create a function to validate that the field has been filled
 
@@ -91,13 +91,7 @@ const Login = () => {
                 <img
                     src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"
                     alt="profile-img"
-                    className="card-img-card"
-                    /*   style={{
-                        width: "12rem",
-                        alignSelf: "center",
-                        borderRadius: "50%",
-                        margin: "10px",
-                    }} */
+                    className="profile-img-card"
                 />
                 <Form
                     className="d-flex flex-column"
