@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import AuthService from "../../services/auth.service";
+import "bootstrap/dist/css/bootstrap.min.css";
 
-export const NavBar = () => {
+const NavBar = () => {
     const [showModBoard, setShowModBoard] = useState(false);
     const [showAdminBoard, setShowAdminBoard] = useState(false);
     const [currentUser, setCurrentUser] = useState(undefined);
@@ -20,13 +21,25 @@ export const NavBar = () => {
     };
 
     return (
-        <div>
-            <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-                <div className="container-fluid">
-                    <Link to={"/"} className="navbar-brand">
-                        SquadHunt
-                    </Link>
-                    <div className="navbar-nav mr-auto">
+        <nav className="navbar navbar-expand-lg bg-light">
+            {" "}
+            <div className="container-fluid">
+                <Link to={"/"} className="navbar-brand">
+                    SquadHunt
+                </Link>
+                <button
+                    className="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarText"
+                    aria-controls="navbarText"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+                >
+                    <span className="navbar-toggler-icon"></span>
+                </button>
+                <div className="collapse navbar-collapse" id="navbarText">
+                    <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                         <li className="nav-item">
                             <Link className="nav-link" to={"/home"}>
                                 Home
@@ -53,9 +66,9 @@ export const NavBar = () => {
                                 </Link>
                             </li>
                         )}
-                    </div>
+                    </ul>
                     {currentUser ? (
-                        <div className="navbar-nav ml-auto">
+                        <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
                             <li className="nav-item">
                                 <Link className="nav-link" to={"/profile"}>
                                     {currentUser.username}
@@ -70,9 +83,9 @@ export const NavBar = () => {
                                     Logout
                                 </a>
                             </li>
-                        </div>
+                        </ul>
                     ) : (
-                        <div className="navbar-nav ml-auto">
+                        <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
                             <li className="nav-item">
                                 <Link className="nav-link" to={"/login"}>
                                     Login
@@ -83,10 +96,12 @@ export const NavBar = () => {
                                     Register
                                 </Link>
                             </li>
-                        </div>
+                        </ul>
                     )}
                 </div>
-            </nav>
-        </div>
+            </div>
+        </nav>
     );
 };
+
+export default NavBar;
