@@ -100,11 +100,12 @@ const Register = () => {
         <section className="register-section">
             <div className="col-md-12">
                 <div className="card card-container">
-                    <img
+                    <h1>Register</h1>
+                    {/*    <img
                         src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"
                         alt="profile-img"
                         className="profile-img-card"
-                    />
+                    /> */}
                     <Form onSubmit={handleRegister} ref={form}>
                         {!successfull && (
                             <div>
@@ -118,6 +119,9 @@ const Register = () => {
                                         onChange={onChangeUsername}
                                         validations={[required, vusername]}
                                     />
+                                    <div className="label-caption">
+                                        Use between 3 - 20 characters
+                                    </div>
                                 </div>
                                 <div className="form-group">
                                     <label htmlFor="email">Email</label>
@@ -129,6 +133,9 @@ const Register = () => {
                                         onChange={onChangeEmail}
                                         validations={[required, validEmail]}
                                     />
+                                    <div className="label-caption">
+                                        Use valid email format
+                                    </div>
                                 </div>
                                 <div className="form-group">
                                     <label htmlFor="password">Password</label>
@@ -140,9 +147,12 @@ const Register = () => {
                                         onChange={onChangePassword}
                                         validations={[required, vpassword]}
                                     />
+                                    <div className="label-caption">
+                                        Use between 6 - 40 characters
+                                    </div>
                                 </div>
                                 <div className="form-group">
-                                    <button className="btn btn-primary btn-block">
+                                    <button className="btn btn-primary btn-block m-2">
                                         Sign Up
                                     </button>
                                 </div>
