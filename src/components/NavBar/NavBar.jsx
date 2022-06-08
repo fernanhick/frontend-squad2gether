@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import AuthService from "../../services/auth.service";
+import "./styles.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 const NavBar = () => {
@@ -21,11 +22,11 @@ const NavBar = () => {
     };
 
     return (
-        <nav className="navbar navbar-expand-lg bg-light">
+        <nav className="navbar navbar-expand-lg  navbar-dark sticky-top">
             {" "}
             <div className="container-fluid">
                 <Link to={"/"} className="navbar-brand">
-                    SquadHunt
+                    <span> SquadHunt</span>
                 </Link>
                 <button
                     className="navbar-toggler"
@@ -43,6 +44,11 @@ const NavBar = () => {
                         <li className="nav-item">
                             <Link className="nav-link" to={"/home"}>
                                 Home
+                            </Link>
+                        </li>
+                        <li className="nav-item">
+                            <Link className="nav-link" to={"/projects"}>
+                                Projects
                             </Link>
                         </li>
                         {showModBoard && (

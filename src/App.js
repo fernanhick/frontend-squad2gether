@@ -10,6 +10,7 @@ import NavBar from "./components/NavBar/NavBar";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/js/dist/collapse.js";
 import "./App.css";
+import Projects from "./components/Projects/Projects";
 
 function App() {
     return (
@@ -24,6 +25,7 @@ function App() {
                 <Route path="/user" element={<UserBoard />} />
                 <Route path="/mod" element={<ModeratorBoard />} />
                 <Route path="/admin" element={<AdminBoard />} />
+                <Route path="/projects" element={<Projects />} />
             </Routes>
         </div>
     );

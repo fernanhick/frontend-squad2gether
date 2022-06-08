@@ -1,0 +1,13 @@
+.navbar {
+    background-color: var(--primary-dark);
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+.navbar-brand:nth-child(1) {
+    letter-spacing: 0.2rem;
+    color: rgb(255, 255, 255);
+    background-color: rgb(0, 52, 77);
+    padding: 0.3rem 0.7rem;
+    border-radius: 50px;
+}

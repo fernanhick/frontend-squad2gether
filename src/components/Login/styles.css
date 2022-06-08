@@ -1,0 +1,9 @@
+.login-section {
+    background-color: var(--primary-dark);
+    background-image: url("../../images/bck-blue.jpg");
+    background-size: auto;
+    background-blend-mode: luminosity;
+}
+.card {
+    background-color: var(--primary-dark);
+}

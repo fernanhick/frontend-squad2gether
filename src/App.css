@@ -28,6 +28,9 @@
     color: #61dafb;
 }
 
+body {
+}
+
 @keyframes App-logo-spin {
     from {
         transform: rotate(0deg);
@@ -48,9 +51,9 @@ label {
 }
 .card {
     background-color: #f7f7f7;
-    padding: 20px 25px 30px;
+    /*     padding: 20px 25px 30px;
+ */
     margin: 0 auto 25px;
-    margin-top: 50px;
     -moz-border-radius: 2px;
     -webkit-border-radius: 2px;
     border-radius: 2px;
@@ -61,9 +64,15 @@ label {
 .profile-img-card {
     width: 96px;
     height: 96px;
-    margin: 0 auto 10px;
     display: block;
     -moz-border-radius: 50%;
     -webkit-border-radius: 50%;
     border-radius: 50%;
+}
+.container {
+    padding-top: 3rem;
+    max-width: 1200px;
+    background-color: rgb(255, 255, 255);
+    min-height: 100vh;
+    box-shadow: 0px 0px 10px rgb(150, 150, 150);
 }

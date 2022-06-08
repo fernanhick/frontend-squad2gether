@@ -4,7 +4,7 @@ import AuthService from "../../services/auth.service";
 const Profile = () => {
     const currentUser = AuthService.getCurrentUser();
     return (
-        <div className="container">
+        <section>
             <header className="jumbotron">
                 <h3>
                     <strong>{currentUser.username}</strong> Profile
@@ -20,7 +20,7 @@ const Profile = () => {
                         <li key={index}>{role}</li>
                     ))}
             </ul>
-        </div>
+        </section>
     );
 };
 export default Profile;
