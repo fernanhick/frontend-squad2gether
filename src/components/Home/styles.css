@@ -1,47 +1,33 @@
-.projects-container > .card {
-    margin: 1rem;
-    max-width: 600px;
-    min-width: 300px;
-}
-.projects-container {
-    padding: 10vh 10vw;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    gap: 1rem;
-}
+/* ***************** MAIN SECTION STYLING CONTAINERS ************8*/
 
-.project {
-    flex: 0 1 50%;
-}
-
+/* *********   HERO SECTION STYLING *****************/
 .hero-section {
     background-color: var(--primary-dark);
     background-image: url("../../images/back-city.jpg");
     background-size: cover;
     background-blend-mode: luminosity;
     display: flex;
+    position: relative;
 }
+
 .hero-wrapper {
     min-width: 100%;
     padding: 0.6rem;
-    color: white;
     display: flex;
     flex-wrap: wrap;
     opacity: 0;
-    justify-content: space-around;
     align-items: center;
     flex-direction: column;
-
     align-self: center;
-    background-color: rgba(7, 42, 56, 0.95);
-    border-radius: 20px;
+
+    color: rgb(0, 0, 0);
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
     box-shadow: 0px 0px 6px;
 }
 
 .register-btn {
     text-decoration: none;
-
     text-transform: uppercase;
     color: white;
     font-weight: 800;
@@ -62,6 +48,7 @@
 .left-side {
     display: flex;
     flex: 1 1 0;
+    min-width: 280px;
 }
 .right-side {
     min-height: 30vh;
@@ -73,9 +60,13 @@
 }
 .left-side > img {
     max-width: 100%;
+    border-radius: 5px;
 }
 .heading-header {
     width: 90%;
+}
+.wrap-header > * {
+    flex: 1 1 0;
 }
 .wrap-header {
     display: flex;
@@ -83,10 +74,8 @@
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    gap: 1rem;
-    padding: 1vw;
 }
-
+/* ********** HERO SECTION ANIMATION **************** */
 .showSection {
     animation-name: animateSection;
     animation-duration: 0.9s;
@@ -94,7 +83,7 @@
 }
 @keyframes animateSection {
     0% {
-        transform: translateY(-10%);
+        transform: translateY(20%);
         opacity: 0;
     }
     100% {
@@ -123,7 +112,7 @@
     }
 }
 .showHr {
-    border-top: white solid;
+    border-top: var(--primary-dark) solid;
     animation-name: hrAnimation;
     animation-duration: 1s;
     width: 90%;
@@ -137,9 +126,7 @@
     }
 }
 
-/* 
-*   Description Section
- */
+/* ****************** Description Section ***********************/
 
 .description-container {
     padding-top: 3rem;
@@ -152,18 +139,23 @@
     opacity: 0;
     flex: 1 1 0;
     min-width: 300px;
-    min-height: 400px;
+    min-height: 60vh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    position: relative;
 }
-.description-content > h3 {
+.description-content > .desc-wrap > h3 {
     margin: 0;
     padding: 1rem;
     text-transform: uppercase;
 }
-.description-content > img {
+.description-content > .desc-wrap > img {
     height: 40vh;
+    width: 100%;
+}
+.desc-wrap {
+    padding: 0.2rem;
 }
 
 .showSearch {
@@ -173,22 +165,189 @@
 }
 .showCreate {
     animation-name: animateContent;
-    animation-duration: 2s;
+    animation-duration: 1.2s;
     opacity: 1;
 }
 .showConnect {
     animation-name: animateContent;
-    animation-duration: 3s;
+    animation-duration: 1.5s;
     opacity: 1;
+}
+@media screen and (max-width: 600px) {
+    .line1,
+    .line2,
+    .line3,
+    .line4 {
+        opacity: 0;
+    }
 }
 
 @keyframes animateContent {
     0% {
-        transform: translateY(30%);
+        transform: translateY(20%);
         opacity: 0;
     }
     100% {
         transform: translateY(0%);
         opacity: 1;
     }
+}
+.description-content:hover .line1 {
+    width: 100%;
+}
+.description-content:hover .line3 {
+    width: 100%;
+}
+.description-content:hover .line4 {
+    height: 100%;
+}
+.description-content:hover .line2 {
+    height: 100%;
+}
+
+.line1,
+.line2,
+.line3,
+.line4 {
+    background: rgb(126, 184, 194);
+    display: block;
+    position: absolute;
+    transition: all 0.5s ease-in-out;
+}
+.line1 {
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 2px;
+}
+.line2 {
+    top: 0;
+    right: 0;
+    width: 2px;
+    height: 30%;
+}
+.line3 {
+    bottom: 0;
+    left: 0;
+    width: 50%;
+    height: 2px;
+}
+.line4 {
+    bottom: 0;
+    left: 0;
+    width: 2px;
+    height: 30%;
+}
+.desc-button {
+    text-decoration: none;
+    text-transform: uppercase;
+    background: var(--primary-dark);
+    padding: 0.5vh 3vw;
+    border-radius: 50px;
+    color: white;
+    transition: all 0.3s ease-in-out;
+    font-weight: 600;
+}
+.desc-button:hover {
+    background: var(--primary-light);
+    color: var(--primary-dark);
+}
+
+/* *********PROJECTS STYLING ************** */
+
+.projects-section {
+    padding: 5vh 5vw;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: space-around;
+    flex-direction: column;
+    background: rgb(240, 240, 240);
+}
+
+.project {
+    border-radius: 7px;
+    margin-bottom: 0.5rem;
+    padding: 2px;
+}
+.project-title {
+    margin: 0;
+    padding: 2px;
+    color: white;
+    font-weight: 800;
+}
+.projects-body {
+    align-items: center;
+    flex-wrap: wrap;
+    background-color: var(--primary-dark);
+    border-radius: 5px;
+    box-shadow: 0 0 10px black;
+    padding: 0.5rem;
+}
+.projects-body > * {
+    flex: 1 1 0;
+    min-width: 300px;
+    padding: 0.8rem;
+    align-content: center;
+    justify-content: space-around;
+    border-radius: 5px;
+}
+.flex {
+    display: flex;
+}
+.projects-body-right {
+    background-color: aliceblue;
+}
+.projects-body-left {
+    min-height: 100%;
+    color: white;
+}
+.project-description {
+    background-color: white;
+    border-radius: 0 0 5px 5px;
+    text-align: left;
+    padding: 3px;
+}
+.links {
+    text-decoration: none;
+    font-weight: 800;
+    font-size: 1.05rem;
+    color: white;
+}
+
+/* ********* Go UP BUTTON ************ */
+
+.up-button {
+    position: fixed;
+    bottom: 50px;
+    right: 20px;
+    display: block;
+    display: none;
+    z-index: 10;
+    opacity: 0.7;
+}
+.up-button > a {
+    color: var(--primary-dark);
+    text-decoration: none;
+    margin: 0;
+    font-size: 2.5rem;
+}
+.show-up-btn {
+    display: block;
+}
+
+.home-page {
+    position: relative;
+}
+
+/* ********* CREATE SECTION ************** */
+.create-section {
+    background: rgb(4, 85, 133);
+    padding: 5vh 5vw;
+}
+.create-section-wrapper {
+    width: 100%;
+    height: 60vh;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.9);
 }

@@ -87,7 +87,7 @@ section {
 @media screen and (max-width: 600px) {
     section {
         min-height: 95vh;
-        padding: 1vh 2vw;
+        padding: 3vh 5vw;
         display: flex;
         align-items: center;
     }

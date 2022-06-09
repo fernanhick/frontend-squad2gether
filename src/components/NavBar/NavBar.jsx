@@ -83,7 +83,7 @@ const NavBar = () => {
                                 </Link>
                             </li>
                         )}
-                    </ul>{" "}
+                    </ul>
                     <hr />
                     {currentUser ? (
                         <ul className="navbar-nav ms-auto mb-2 mb-lg-0">

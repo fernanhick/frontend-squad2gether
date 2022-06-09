@@ -1,0 +1,8 @@
+.create-board-section {
+    min-width: 100%;
+}
+.create-form {
+    background-color: aqua;
+    padding: 1rem;
+    min-width: 100%;
+}

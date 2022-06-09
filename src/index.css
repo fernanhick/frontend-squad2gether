@@ -22,4 +22,5 @@ body > * {
 :root {
     --primary-dark: rgb(24, 149, 199);
     --primary-light: rgb(206, 206, 206);
+    --random-position: clamp(100px, 0px);
 }
