@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useState, useEffect } from "react";
 import { useInView } from "react-intersection-observer";
 import { Link } from "react-router-dom";
@@ -27,28 +28,12 @@ const Home = () => {
         triggerOnce: true,
     });
     const { ref: topPage, inView: topVisible } = useInView();
-    //   const [content, setContent] = useState("");
     const [projects, setProjects] = useState("");
     useEffect(() => {
-        /*    UserService.getPublicContent().then(
+        setInterval(() => {
+             ProjectService.getProjects().then(
             (response) => {
-                setContent(response.data);
-            },
-            (error) => {
-                const _content =
-                    (error.response &&
-                        error.response.data &&
-                        error.response.data.message) ||
-                    error.message ||
-                    error.toString();
-                setContent(_content);
-            }
-        ); */
-
-        ProjectService.getProjects().then(
-            (response) => {
-                setProjects(response.data);
-                console.log(response.data);
+                setProjects(response.data)
             },
             (error) => {
                 const _project =
@@ -59,6 +44,8 @@ const Home = () => {
                 setProjects(_project);
             }
         );
+          }, 2000);
+     
     }, []);
     return (
         <div className="home-page">
@@ -68,7 +55,7 @@ const Home = () => {
                     <FaArrowAltCircleUp />
                 </a>
             </div>
-            <section className="hero-section">
+            <section className="hero-section section">
                 <div
                     ref={myRef}
                     className={`hero-wrapper ${
@@ -188,10 +175,7 @@ const Home = () => {
                 </div>
             </section>
             <section className="projects-section">
-                <div className="projects-section-header">
-                    {/*                     <h1>Projects</h1>
-                     */}{" "}
-                </div>
+               
                 <div
                     className={`projects-body flex ${
                         projectDesc1 ? "showSection" : ""

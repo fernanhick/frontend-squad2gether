@@ -11,8 +11,6 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/js/dist/collapse.js";
 import "./App.css";
 import Projects from "./components/Projects/Projects";
-import CreateBoard from "./components/Boards/UserBoard/components/CreateBoard/CreateBoard";
-
 function App() {
     return (
         <div className="App">

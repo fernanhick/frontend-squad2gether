@@ -256,9 +256,9 @@
 /* *********PROJECTS STYLING ************** */
 
 .projects-section {
-    padding: 5vh 5vw;
     display: flex;
     flex-wrap: wrap;
+    align-self: center;
     gap: 1rem;
     justify-content: space-around;
     flex-direction: column;
@@ -297,7 +297,18 @@
 }
 .projects-body-right {
     background-color: aliceblue;
+    max-height: 50vh;
+    overflow: scroll;
+  scrollbar-width: 1px;
+  -ms-overflow-style: none; /* for Internet Explorer, Edge */
+  scrollbar-width: none; /* for Firefox */
+  overflow-y: scroll; 
 }
+.projects-body-right::-webkit-scrollbar {
+    display: none; /* for Chrome, Safari, and Opera */
+}
+
+
 .projects-body-left {
     min-height: 100%;
     color: white;
@@ -343,7 +354,6 @@
 /* ********* CREATE SECTION ************** */
 .create-section {
     background: rgb(4, 85, 133);
-    padding: 5vh 5vw;
 }
 .create-section-wrapper {
     width: 100%;

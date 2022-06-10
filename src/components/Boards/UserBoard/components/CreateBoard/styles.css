@@ -1,8 +1,42 @@
-.create-board-section {
+
+.create-form {
+    color: white;
+    background-color: var(--primary-dark);
+    padding: 1rem;
+    border-radius: 5px;
+   box-shadow: 0px 0px 4px black;
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 700px;
+}
+.create-form > h1 {
     min-width: 100%;
 }
-.create-form {
-    background-color: aqua;
-    padding: 1rem;
-    min-width: 100%;
+.create-form > * {
+    align-items: center;
+}
+.form-wrap{
+    width: 100%;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+.form-group-wrapper{}
+.form-container{
+    justify-content: center;
+    width: 100%;
+    gap: 1rem;
+    flex-wrap: wrap;
+    display: flex;
+}
+
+.btn-submit{
+    width: 10em;
+}
+Input,textarea{
+    border: none;
+    border-radius: 5px;
+    min-height: 2.5rem;
+    box-shadow: inset 0px 0px 4px black;
+    
 }

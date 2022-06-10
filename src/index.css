@@ -24,3 +24,11 @@ body > * {
     --primary-light: rgb(206, 206, 206);
     --random-position: clamp(100px, 0px);
 }
+html{
+    font-size: 15px;
+}
+@media screen and (max-width: 600px) {
+    html  *{
+    font-size: 12px;
+}
+}
