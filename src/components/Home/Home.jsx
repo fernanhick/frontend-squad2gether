@@ -211,10 +211,10 @@ const Home = () => {
                             projects.slice(-4).map((project, index) => (
                                 <div
                                     className="project"
-                                    key={index}
+                                    key={project.id}
                                     style={{
                                         background:
-                                            index % 2 === 0
+                                            project.id % 2 === 0
                                                 ? "var(--primary-dark)"
                                                 : "rgb(4, 85, 133)",
                                     }}
@@ -245,6 +245,12 @@ const Home = () => {
                                                     {project.members.join(", ")}
                                                 </span>
                                             </div>
+                                            <div className="project-author">
+                        <strong>Author: </strong>
+                            <span>
+                                {project.user.username}
+                            </span>
+                        </div>
                                         </div>
                                     </div>
                                 </div>

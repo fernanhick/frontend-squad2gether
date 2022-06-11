@@ -1,17 +1,17 @@
 import React, { useEffect } from "react";
 import CreateBoard from "./components/CreateBoard/CreateBoard";
-import SideBar from "./components/Sidebar/SideBar";
-
+import UserProjects from './components/UserProjects/UserProjects';
+import './styles.css'
 const UserBoard = () => {
     useEffect(() => {
-       
+
     }, []);
 
     return (
-        <section className="user-board">
-{/*             <SideBar />
- */}            <CreateBoard />
-        </section>
+        <div className="user-board">
+            <CreateBoard />
+            <UserProjects />
+        </div>
     );
 };
 

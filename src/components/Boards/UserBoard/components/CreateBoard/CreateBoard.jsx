@@ -48,8 +48,8 @@ const CreateBoard = () => {
         form.current.validateAll()
         if (checkBtn.current.context._errors.length === 0) {
              ProjectService.createProject( title, members, technologies,  description ).then((response)=>{
-                 window.location.reload()
-                 setSuccessfull(true);
+/*                  window.location.reload()
+ */                 setSuccessfull(true);
 
              }, (error)=>{
                  const resMessage = (error.response && error.response.data && error.response.data.message) || error.message || error.toString()
@@ -63,9 +63,9 @@ const CreateBoard = () => {
     }
 
     return (
-        <section className="create-board-section">
+        <div className="create-board-section">
             <div className="create-form">
-                <h1>New Project</h1>
+                <h5>New Project</h5>
                 <Form
                     className="d-flex flex-row form-container"
                     onSubmit={handleSubmitCreate}
@@ -114,7 +114,7 @@ const CreateBoard = () => {
                         </div>
                     )}
             </div>
-        </section>
+        </div>
     );
 };
 

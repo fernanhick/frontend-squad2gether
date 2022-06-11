@@ -79,8 +79,7 @@ const NavBar = () => {
                         {currentUser && (
                             <li className="nav-item">
                                 <Link className="nav-link" to={"/user"}>
-                                    User Board
-                                </Link>
+                                    Dashboard                                </Link>
                             </li>
                         )}
                     </ul>
