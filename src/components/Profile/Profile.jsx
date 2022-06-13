@@ -102,7 +102,7 @@ const Profile = () => {
                         <Form className='profile-form' onSubmit={handleUpdateProfile} ref={profileForm}>
                             <div className="form-group">
                                 <label htmlFor="languages">Programming Languages</label>
-                                <Input type='text' name='languages' onChange={handleLanguageChange} value={profileLanguages} /* placeholder={currentUserInfo.languages}  */ />
+                                <Input type='text' name='languages' onChange={handleLanguageChange} value={profileLanguages} placeholder={currentUserInfo.languages} />
                                 <label htmlFor="technologies">Technologies</label>
                                 <Input type='text' name='technologies' onChange={handleTechChange} value={profileTech} placeholder={currentUserInfo.technologies} />
 

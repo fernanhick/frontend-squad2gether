@@ -31,21 +31,21 @@ const Home = () => {
     const [projects, setProjects] = useState("");
     useEffect(() => {
         setInterval(() => {
-             ProjectService.getProjects().then(
-            (response) => {
-                setProjects(response.data)
-            },
-            (error) => {
-                const _project =
-                    (error.response &&
-                        error.response.data &&
-                        error.response.data.message) ||
-                    (error.message && error.toString());
-                setProjects(_project);
-            }
-        );
-          }, 2000);
-     
+            ProjectService.getProjects().then(
+                (response) => {
+                    setProjects(response.data)
+                },
+                (error) => {
+                    const _project =
+                        (error.response &&
+                            error.response.data &&
+                            error.response.data.message) ||
+                        (error.message && error.toString());
+                    setProjects(_project);
+                }
+            );
+        }, 2000);
+
     }, []);
     return (
         <div className="home-page">
@@ -58,9 +58,8 @@ const Home = () => {
             <section className="hero-section section">
                 <div
                     ref={myRef}
-                    className={`hero-wrapper ${
-                        wrapperVisible ? "showSection" : ""
-                    }`}
+                    className={`hero-wrapper ${wrapperVisible ? "showSection" : ""
+                        }`}
                 >
                     {" "}
                     <div className="wrap-header">
@@ -91,9 +90,8 @@ const Home = () => {
                                 begin the journey for project of your dreams.
                             </p>
                             <div
-                                className={` ${
-                                    wrapperVisible ? "showStartButton" : ""
-                                }`}
+                                className={` ${wrapperVisible ? "showStartButton" : ""
+                                    }`}
                             >
                                 <Link className="register-btn" to={"/register"}>
                                     Start Today
@@ -105,9 +103,8 @@ const Home = () => {
             </section>
             <section className="description-container">
                 <div
-                    className={`description-content ${
-                        descVisible1 ? "showSearch" : ""
-                    }`}
+                    className={`description-content ${descVisible1 ? "showSearch" : ""
+                        }`}
                     ref={descRef1}
                 >
                     <span className="line1"></span>
@@ -130,9 +127,8 @@ const Home = () => {
                     </div>
                 </div>
                 <div
-                    className={`description-content ${
-                        descVisible2 ? "showCreate" : ""
-                    }`}
+                    className={`description-content ${descVisible2 ? "showCreate" : ""
+                        }`}
                     ref={descRef2}
                 >
                     <span className="line1"></span>
@@ -152,9 +148,8 @@ const Home = () => {
                 </div>
 
                 <div
-                    className={`description-content ${
-                        descVisible3 ? "showConnect" : ""
-                    }`}
+                    className={`description-content ${descVisible3 ? "showConnect" : ""
+                        }`}
                     ref={descRef3}
                 >
                     <span className="line1"></span>
@@ -175,11 +170,10 @@ const Home = () => {
                 </div>
             </section>
             <section className="projects-section">
-               
+
                 <div
-                    className={`projects-body flex ${
-                        projectDesc1 ? "showSection" : ""
-                    }`}
+                    className={`projects-body flex ${projectDesc1 ? "showSection" : ""
+                        }`}
                     ref={proRef1}
                 >
                     <div className="projects-body-left">
@@ -234,23 +228,21 @@ const Home = () => {
                                             <div className="project-tech">
                                                 <strong>Technologies: </strong>
                                                 <span>
-                                                    {project.technologies.join(
-                                                        ", "
-                                                    )}
+                                                    {project.technologies}
                                                 </span>
                                             </div>{" "}
                                             <div className="project-memb">
                                                 <strong>Members: </strong>
                                                 <span>
-                                                    {project.members.join(", ")}
+                                                    {project.members}
                                                 </span>
                                             </div>
                                             <div className="project-author">
-                        <strong>Author: </strong>
-                            <span>
-                                {project.user.username}
-                            </span>
-                        </div>
+                                                <strong>Author: </strong>
+                                                <span>
+                                                    {project.user.username}
+                                                </span>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>

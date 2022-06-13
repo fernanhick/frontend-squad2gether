@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import AuthService from '../../../../../services/auth.service';
-import ProjectService from '../../../../../services/project.service';
 import UserService from '../../../../../services/user.service';
 import './styles.css'
 
@@ -8,7 +7,6 @@ import './styles.css'
 
 const UserProjects = () => {
     const user = AuthService.getCurrentUser()
-    const [projects, setProjects] = useState('')
     const [currentUser, setCurretUser] = useState('')
     const [message, setMessage] = useState('')
     useEffect(() => {
@@ -22,7 +20,7 @@ const UserProjects = () => {
                         (error.response &&
                             error.response.data &&
                             error.response.data.message) ||
-                        (error.message && error.toString());
+                        error.message || error.toString();
                     setMessage(_project);
                 }
             );
@@ -60,15 +58,13 @@ const UserProjects = () => {
                                 <div className="project-tech">
                                     <strong>Technologies: </strong>
                                     <span>
-                                        {project.technologies.join(
-                                            ", "
-                                        )}
+                                        {project.technologies}
                                     </span>
                                 </div>{" "}
                                 <div className="project-memb">
                                     <strong>Members: </strong>
                                     <span>
-                                        {project.members.join(", ")}
+                                        {project.members}
                                     </span>
                                 </div>
                             </div>

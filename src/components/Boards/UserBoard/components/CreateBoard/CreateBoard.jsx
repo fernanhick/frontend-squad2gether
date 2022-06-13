@@ -50,6 +50,7 @@ const CreateBoard = () => {
         setSuccessfull(false);
         form.current.validateAll()
         /*  if (checkBtn.current.context._errors.length === 0) { */
+
         ProjectService.createProject(title, members, technologies, description).then((response) => {
             setTitle('')
             setMembers('')
@@ -63,9 +64,7 @@ const CreateBoard = () => {
             setSuccessfull(false);
             setMessage(resMessage)
         })
-        /*     } else {
-                setSuccessfull(false);
-            } */
+
 
     }
 

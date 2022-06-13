@@ -8,9 +8,11 @@ const UserBoard = () => {
     }, []);
 
     return (
-        <div className="user-board">
-            <UserProjects />
-            <CreateBoard />
+        <div className="user-board-section">
+            <div className="user-board">
+                <UserProjects />
+                <CreateBoard />
+            </div>
         </div>
     );
 };

@@ -79,11 +79,12 @@ label {
 }
 
 section {
-    min-height: 90vh;
+    min-height: 95vh;
     padding: 5vh 20vw;
     display: flex;
     align-items: center;
     justify-content: center;
+    background: #ffffff;
 }
 @media screen and (max-width: 1000px) {
     section {

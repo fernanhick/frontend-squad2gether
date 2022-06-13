@@ -3,7 +3,7 @@
 /* *********   HERO SECTION STYLING *****************/
 .hero-section {
     background-color: var(--primary-dark);
-    background-image: url("../../images/back-city.jpg");
+    background-image: url('../../images/back-city.jpg');
     background-size: cover;
     background-blend-mode: luminosity;
     display: flex;
@@ -50,7 +50,8 @@
     flex: 1 1 0;
     min-width: 280px;
 }
-.right-side {padding: 1rem;
+.right-side {
+    padding: 1rem;
     min-height: 30vh;
     min-width: 40%;
     display: flex;
@@ -132,12 +133,12 @@
     padding-top: 3rem;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center;
     gap: 2rem;
 }
 .description-content {
     opacity: 0;
-    flex: 1 1 0;
+    flex: 0 1 0;
     min-width: 300px;
     min-height: 30vh;
     display: flex;
@@ -299,15 +300,14 @@
     background-color: aliceblue;
     max-height: 50vh;
     overflow: scroll;
-  scrollbar-width: 1px;
-  -ms-overflow-style: none; /* for Internet Explorer, Edge */
-  scrollbar-width: none; /* for Firefox */
-  overflow-y: scroll; 
+    scrollbar-width: 1px;
+    -ms-overflow-style: none; /* for Internet Explorer, Edge */
+    scrollbar-width: none; /* for Firefox */
+    overflow-y: scroll;
 }
 .projects-body-right::-webkit-scrollbar {
     display: none; /* for Chrome, Safari, and Opera */
 }
-
 
 .projects-body-left {
     min-height: 100%;
