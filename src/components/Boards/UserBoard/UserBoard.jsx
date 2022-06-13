@@ -9,8 +9,8 @@ const UserBoard = () => {
 
     return (
         <div className="user-board">
-            <CreateBoard />
             <UserProjects />
+            <CreateBoard />
         </div>
     );
 };

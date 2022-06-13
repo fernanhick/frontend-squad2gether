@@ -23,6 +23,16 @@ const getAdminBoard = () => {
 const getUserById = (id) => {
     return axios.get(API_URL_USER + id)
 }
+
+const updateUser = (id, lang, tech, skills, web, desc) => {
+    return axios.patch(API_URL_USER + id, {
+        languages: lang,
+        technologies: tech,
+        skills: skills,
+        website: web,
+        description: desc,
+    })
+}
 // Wrapp all the functions as methodds in the UserService object.
 const UserService = {
     getPublicContent,
@@ -30,5 +40,6 @@ const UserService = {
     getModeratorBoard,
     getAdminBoard,
     getUserById,
+    updateUser,
 }
 export default UserService

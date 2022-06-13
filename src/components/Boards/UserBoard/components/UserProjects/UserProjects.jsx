@@ -29,9 +29,9 @@ const UserProjects = () => {
         }, 1000);
     }, []);
 
-    console.log(projects);
+    console.log(currentUser);
     return (
-        <div className="user-projects-section"><h5>User Projects</h5>
+        <div className="user-projects-section"><h5>User Projects</h5>{message}
             <div className='user-projects'>{currentUser ? (
                 currentUser.projects.map((project, index) => (
                     /* project.user._id === user.id ? */
@@ -69,12 +69,6 @@ const UserProjects = () => {
                                     <strong>Members: </strong>
                                     <span>
                                         {project.members.join(", ")}
-                                    </span>
-                                </div>
-                                <div className="project-author">
-                                    <strong>Author: </strong>
-                                    <span>
-                                        {project.user.username}
                                     </span>
                                 </div>
                             </div>

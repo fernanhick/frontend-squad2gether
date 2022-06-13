@@ -1,10 +1,9 @@
-
 .create-form {
     color: white;
     background-color: var(--primary-dark);
     padding: 0.3rem;
     border-radius: 5px;
-   box-shadow: 0px 0px 4px black;
+    box-shadow: 0px 0px 4px black;
     display: flex;
     flex-wrap: wrap;
     max-width: 350px;
@@ -18,12 +17,12 @@
     align-items: center;
     min-width: 100%;
 }
-.form-wrap{
+.form-wrap {
     width: 100%;
     justify-content: flex-start;
     flex-wrap: wrap;
 }
-.form-container{
+.form-container {
     justify-content: center;
     width: 100%;
     gap: 0.3rem;
@@ -31,17 +30,22 @@
     display: flex;
 }
 
-.btn-submit{
+.btn-submit {
     width: 7em;
     height: 2rem;
 }
-Input,textarea{
+.form-group-wrapper {
+    width: 100%;
+}
+Input,
+textarea {
     border: none;
     border-radius: 5px;
     min-height: 2rem;
     box-shadow: inset 0px 0px 4px black;
     padding-left: 5px;
+    width: 100%;
 }
-label{
+label {
     font-weight: 600;
 }
