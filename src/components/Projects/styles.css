@@ -27,9 +27,13 @@
 }
 
 .projects-list {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
     flex: 1 1 0;
-    max-width: 600px;
-    min-width: 70vw;
+    width: 90%;
+    /*     max-width: 1200px;
+ */
     max-height: 60vh;
     overflow: scroll;
     scrollbar-width: 1px;
@@ -66,8 +70,13 @@
     transform: scale(0.99);
 }
 .project-link {
+    flex: 1 1 0;
     text-decoration: none;
     color: black;
+    /*     min-width: 40vw;
+ */
+    /*     max-width: 600px;
+ */
 }
 .project-link:hover {
     color: black;

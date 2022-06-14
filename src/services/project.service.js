@@ -3,7 +3,6 @@ import authHeader from './auth-header'
 import AuthService from './auth.service'
 
 const API_URL = 'http://localhost:8080/api/v1/projects/'
-const API_URL_USER = 'http://localhost:8080/api/v1/user/'
 const user = AuthService.getCurrentUser()
 
 const getProjects = () => {
@@ -16,10 +15,14 @@ const createProject = (title, members, technologies, description) => {
         { headers: authHeader() }
     )
 }
+const getProjectById = (id) => {
+    return axios.get(API_URL + id)
+}
 
 const ProjectService = {
     getProjects,
     createProject,
+    getProjectById,
 }
 
 export default ProjectService

@@ -39,7 +39,7 @@ const Projects = () => {
                     project.description.toLowerCase().includes(searchValue.toLowerCase()) || project.title.toLowerCase().includes(searchValue.toLowerCase())
                         || project.technologies.toLowerCase().includes(searchValue.toLowerCase())
                         ?
-                        <Link className='project-link' key={project._id} to={'/home'}>
+                        <Link className='project-link' key={project._id} to={`/project/${project._id}`}>
                             < div className="project-container"  >
                                 <div className="header-project"><h5>{project.title}</h5></div>
                                 <div className="body-project">
@@ -56,7 +56,8 @@ const Projects = () => {
 
 
 
-        </div>
+            {/*             <Outlet />
+ */}        </div>
     </div >;
 };
 export default Projects;
