@@ -17,12 +17,12 @@ const Profile = () => {
 
     useEffect(() => {
         setInterval(() => {
-
+            /* GET USER DATA FROM DATABASE */
             UserService.getUserById(currentUser.id).then((res) => {
                 setCurrentUserInfo(res.data)
             })
         }, 1000);
-
+        /* SET VALUES FOR PROFILE TO DISPLAY IN PLACEHOLDER */
         setProfileLanguages(currentUserInfo.languages)
         setProfileTech(currentUserInfo.technologies)
         setProfileWebsite(currentUserInfo.website)
@@ -32,7 +32,7 @@ const Profile = () => {
     }, [])
 
     console.log(currentUserInfo);
-
+    /* HANDLE PROFILE UPDATE */
     const handleUpdateProfile = (e) => {
         e.preventDefault()
 
@@ -47,7 +47,7 @@ const Profile = () => {
             }))
 
     }
-
+    /* HANDLE FIELDS VALUE IN FORM */
     const handleLanguageChange = (e) => {
         const lang = e.target.value
         setProfileLanguages(lang)
@@ -73,6 +73,7 @@ const Profile = () => {
     return (
         <div className='profile-section'>
             <div className="profile-content">
+                <div className="profile-section-header"><h1>profile</h1></div>
                 <div className="profile-board">
                     <div className="profile-board-header">
                         <h5>{currentUserInfo.username}'s profile</h5>

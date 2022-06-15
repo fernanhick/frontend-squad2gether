@@ -6,7 +6,7 @@
     justify-content: center;
 }
 .projects-section-wrapper {
-    padding: 5vh 0.2rem;
+    padding: 0vh 0.2rem;
     max-width: 1300px;
     background: white;
     min-height: 90vh;
@@ -17,8 +17,20 @@
     align-items: center;
 }
 .projects-page-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 5em;
+    color: white;
     width: 100%;
     text-transform: uppercase;
+    background: rgb(255, 255, 255);
+    background: linear-gradient(
+        34deg,
+        rgba(255, 255, 255, 1) 0%,
+        var(--primary-dark) 25%,
+        rgb(12, 106, 122) 29%
+    );
 }
 .projects-search-bar {
     padding: 0.3rem;

@@ -1,7 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import './index.css'
-import App from './App'
 import reportWebVitals from './reportWebVitals'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Home from './components/Home/Home'
@@ -11,21 +10,25 @@ import Profile from './components/Profile/Profile'
 import UserBoard from './components/Boards/UserBoard/UserBoard'
 import Projects from './components/Projects/Projects'
 import Project from './components/Projects/Project/Project'
+import NavBar from './components/NavBar/NavBar'
+import About from './components/About/About'
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
     // <React.StrictMode>
     <BrowserRouter>
+        <NavBar />
         <Routes>
-            <Route path='*' element={<App />}>
-                <Route path='home' element={<Home />} />
-                <Route path='login' element={<Login />} />
-                <Route path='register' element={<Register />} />
-                <Route path='profile' element={<Profile />} />
-                <Route path='user' element={<UserBoard />} />
-                <Route path='projects' element={<Projects />} />
-                <Route path='project/:id' element={<Project />} />
-            </Route>
+            <Route path='/' element={<Home />} />
+
+            <Route path='home' element={<Home />} />
+            <Route path='login' element={<Login />} />
+            <Route path='register' element={<Register />} />
+            <Route path='about' element={<About />} />
+            <Route path='profile' element={<Profile />} />
+            <Route path='user' element={<UserBoard />} />
+            <Route path='projects' element={<Projects />} />
+            <Route path='project/:id' element={<Project />} />
         </Routes>
     </BrowserRouter>
     // </React.StrictMode>

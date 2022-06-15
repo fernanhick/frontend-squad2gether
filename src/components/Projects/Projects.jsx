@@ -26,7 +26,7 @@ const Projects = () => {
     return <div className='projects-page-section'>
         <div className="projects-section-wrapper">
             <div className="projects-page-header">
-                <h4>Projects</h4>
+                <h1>Projects</h1>
             </div>
             <div className="projects-search-bar">
                 <strong>Search For Projects</strong>

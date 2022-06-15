@@ -9,7 +9,8 @@ const UserBoard = () => {
 
     return (
         <div className="user-board-section">
-            <div className="user-board">
+            <div className="user-board">            <div className="user-board-header"><h1>dashboard</h1></div>
+
                 <UserProjects />
                 <CreateBoard />
             </div>

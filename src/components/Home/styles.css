@@ -297,6 +297,7 @@
     display: flex;
 }
 .projects-body-right {
+    min-height: 400px;
     background-color: aliceblue;
     max-height: 50vh;
     overflow: scroll;
