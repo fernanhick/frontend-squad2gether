@@ -47,7 +47,16 @@ strong {
     margin: 0;
     font-size: 1em;
 }
-
+.like-badge {
+    background: var(--primary-dark);
+    width: 3em;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.like-badge:hover {
+    filter: brightness(70%);
+}
 .project-page-content-comments > h5 {
     font-size: 1.1em;
     text-transform: uppercase;

@@ -18,11 +18,23 @@ const createProject = (title, members, technologies, description) => {
 const getProjectById = (id) => {
     return axios.get(API_URL + id)
 }
+const deleteProjectById = (id) => {
+    return axios.delete(API_URL + id)
+}
+const likeProjectById = (id) => {
+    return axios.patch(API_URL + 'like/' + id, { username: user.username })
+}
+const unLikeProjectById = (id) => {
+    return axios.patch(API_URL + 'unlike/' + id, { username: user.username })
+}
 
 const ProjectService = {
     getProjects,
     createProject,
     getProjectById,
+    deleteProjectById,
+    likeProjectById,
+    unLikeProjectById,
 }
 
 export default ProjectService

@@ -6,19 +6,19 @@
     max-height: 50vh;
     flex: 1 1 0;
     max-width: 650px;
-    /*     min-height: 455px;
- */
+    display: flex;
+    flex-direction: column;
     justify-content: center;
+    min-width: 320px;
 }
 
 .user-projects {
     background: white;
     border-radius: 10px;
-    padding: 0.3rem;
+    padding: 0.5rem;
     max-height: 45vh;
-    /*     max-width: 600px;
- */
-    /* s */
+    background: rgb(245, 245, 245);
+    box-shadow: inset 0px 0px 10px black;
     flex: 1 1 0;
     overflow: scroll;
     scrollbar-width: 1px;
@@ -39,8 +39,10 @@
 .project {
     border-radius: 7px;
     padding: 2px;
+    box-shadow: 0px 0px 7px black;
 }
 .project-title {
+    position: relative;
     margin: 0;
     padding: 2px;
     color: white;
@@ -71,4 +73,40 @@
     border-radius: 0 0 5px 5px;
     text-align: left;
     padding: 3px;
+}
+
+.show-project {
+    opacity: 1;
+    animation-name: showProject;
+    animation-duration: 1s;
+}
+
+@keyframes showProject {
+    0% {
+        transform: translatex(10%);
+    }
+    100% {
+        transform: translatex();
+
+        opacity: 1;
+    }
+}
+.delete-btn {
+    position: absolute;
+    background: red;
+    color: white;
+    bottom: 4px;
+    right: 5px;
+    border-radius: 5px;
+    font-size: 0.6em;
+    padding: 0 0.4em;
+    text-transform: uppercase;
+    z-index: 2;
+    cursor: pointer;
+}
+.delete-btn:hover {
+    filter: brightness(60%);
+}
+.project-link {
+    z-index: 1;
 }

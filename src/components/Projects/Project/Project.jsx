@@ -4,6 +4,9 @@ import AuthService from '../../../services/auth.service'
 import Commentservice from '../../../services/comment.service'
 import ProjectService from '../../../services/project.service'
 import { FaRegTimesCircle } from "react-icons/fa";
+import { BiLike } from "react-icons/bi";
+
+
 import './styles.css'
 const Project = () => {
     const [project, setProject] = useState('')
@@ -46,10 +49,14 @@ const Project = () => {
 
     }
     const deletecomment = (e) => {
-        const val = e
         Commentservice.deleteComment(e)
     }
-
+    const likeProject = (e) => {
+        ProjectService.likeProjectById(e)
+    }
+    const unLikeProject = (e) => {
+        ProjectService.unLikeProjectById(e)
+    }
     console.log(project);
     return (
         <div className="project-page-section">
@@ -65,6 +72,18 @@ const Project = () => {
                         <p><strong>Author: </strong>{project.user.username}</p>
                         <p><strong>Posted: </strong>{project.createdAt.slice(0, 10)}</p>
                     </div>
+                    {user ? <div className="project-social-controllers">
+                        {project.likes.includes(user.username) ?
+                            <div className="like-badge" style={{
+                                boxShadow: 'inset 0px 0px 3px white'
+                            }} onClick={() => { unLikeProject(project._id) }}>
+                                <BiLike />{project.likes.length}</div> :
+                            <div className="like-badge" style={{ color: 'var(--primary-dark)', background: 'white', boxShadow: '0px 0px 2px var(--primary-dark)' }} onClick={() => { likeProject(project._id) }}><BiLike /> {project.likes.length}</div>}
+                    </div> :
+                        <div className="like-badge" style={{
+                            boxShadow: 'inset 0px 0px 3px white'
+                        }}><BiLike />{project.likes.length}</div>}
+
                     <div className="project-page-content-comments">
                         <h5>comments</h5>
                         <div className="project-page-comment">
@@ -80,9 +99,9 @@ const Project = () => {
                                         <div className="comment-creator">
                                             <p><strong>author: </strong>{comment.user.username} </p><p><strong>created: </strong>{comment.createdAt.slice(0, 10)} at {comment.createdAt.slice(11, 19)}</p>
                                         </div>
-                                    </div>
-                                    <div className="comment-delete">{comment.user.username === user.username ? <div className='deleteBtn' onClick={() => deletecomment(comment._id)}><FaRegTimesCircle /></div> : <></>}
-                                    </div>
+                                    </div>{user ?
+                                        <div className="comment-delete">  {comment.user.username === user.username && <div className='deleteBtn' onClick={() => deletecomment(comment._id)}><FaRegTimesCircle /></div>}
+                                        </div> : <></>}
                                 </div>
                             ))}
                         </div>
@@ -91,7 +110,6 @@ const Project = () => {
                     <div className="project-page-comment-controller">
                         {!user ? 'Login for commenting' : <form onSubmit={handleSumbitComment} >
                             <textarea className='input-bar' type="text" value={newComment} onChange={handleNewComment} required={true} name='text' placeholder='Insert comment' cols={5} /> <button className='commentBtn' >Comment</button>
-
                             {message && (
                                 <div className="form-group">
                                     <div
@@ -109,7 +127,7 @@ const Project = () => {
                     </div>
                 </div>}
             </div>
-        </div>
+        </div >
     )
 }
 

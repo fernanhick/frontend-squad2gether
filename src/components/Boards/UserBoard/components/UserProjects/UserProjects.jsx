@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom';
 import AuthService from '../../../../../services/auth.service';
+import ProjectService from '../../../../../services/project.service';
 import UserService from '../../../../../services/user.service';
 import './styles.css'
 
@@ -26,13 +28,19 @@ const UserProjects = () => {
             );
         }, 1000);
     }, []);
+    let projectIT = 0
+
+    const deleteProject = (id) => {
+        ProjectService.deleteProjectById(id)
+    }
 
     console.log(currentUser);
     return (
         <div className="user-projects-section"><h5>User Projects</h5>{message}
             <div className='user-projects'>{currentUser ? (
                 currentUser.projects.map((project, index) => (
-                    /* project.user._id === user.id ? */
+
+
                     <div
                         className="project"
                         key={index}
@@ -45,35 +53,35 @@ const UserProjects = () => {
                     >
                         <div className="project-body">
                             <h5 className="project-title">
-                                {project.title}
-                            </h5>
-                            <div className="project-description">
-                                <div className="project-desc">
-                                    {" "}
-                                    <strong>Description: </strong>
-                                    <span>
-                                        {project.description}
-                                    </span>
+                                {project.title}<div className="delete-btn" onClick={() => { deleteProject(project._id) }}>Delete</div>
+                            </h5><Link className='project-link show-project' style={{ animationDuration: `1.${projectIT++}s` }} to={`/project/${project._id}`}>
+                                <div className="project-description">
+                                    <div className="project-desc">
+                                        {" "}
+                                        <strong>Description: </strong>
+                                        <span>
+                                            {project.description}
+                                        </span>
+                                    </div>
+                                    <div className="project-tech">
+                                        <strong>Technologies: </strong>
+                                        <span>
+                                            {project.technologies}
+                                        </span>
+                                    </div>{" "}
+                                    <div className="project-memb">
+                                        <strong>Members: </strong>
+                                        <span>
+                                            {project.members}
+                                        </span>
+                                    </div>
                                 </div>
-                                <div className="project-tech">
-                                    <strong>Technologies: </strong>
-                                    <span>
-                                        {project.technologies}
-                                    </span>
-                                </div>{" "}
-                                <div className="project-memb">
-                                    <strong>Members: </strong>
-                                    <span>
-                                        {project.members}
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
+                            </Link> </div>
                     </div>
                 ))
             ) : (
                 <></>
-            )}</div></div>
+            )}</div></div >
     )
 }
 

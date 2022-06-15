@@ -22,7 +22,7 @@ const Projects = () => {
         const value = e.target.value
         setSearchValue(value)
     }
-
+    let projectIT = 0
     return <div className='projects-page-section'>
         <div className="projects-section-wrapper">
             <div className="projects-page-header">
@@ -39,7 +39,7 @@ const Projects = () => {
                     project.description.toLowerCase().includes(searchValue.toLowerCase()) || project.title.toLowerCase().includes(searchValue.toLowerCase())
                         || project.technologies.toLowerCase().includes(searchValue.toLowerCase())
                         ?
-                        <Link className='project-link' key={project._id} to={`/project/${project._id}`}>
+                        <Link className='project-link show-project' style={{ animationDuration: `1.${projectIT++}s` }} key={project._id} to={`/project/${project._id}`}>
                             < div className="project-container"  >
                                 <div className="header-project"><h5>{project.title}</h5></div>
                                 <div className="body-project">
