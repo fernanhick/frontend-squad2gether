@@ -1,7 +1,7 @@
 .user-board {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.5rem;
+    gap: 2rem;
     max-width: 1300px;
     background: white;
     min-height: 100vh;
@@ -9,7 +9,7 @@
     flex: 1 1 0;
 }
 .user-board-section {
-    padding: 0 2vw;
+    padding: 0 5vw;
     background: rgb(243, 243, 243);
     display: flex;
     justify-content: center;

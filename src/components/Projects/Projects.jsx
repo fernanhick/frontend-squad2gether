@@ -46,8 +46,6 @@ const Projects = () => {
                                     <p><strong>Description: </strong>{project.description}</p>
                                     <p><strong>Members: </strong>{project.members}</p>
                                     <p><strong>Technologies: </strong>{project.technologies}</p>
-                                    <p><strong>Author: </strong>{project.user.username}</p>
-                                    <p><strong>Posted: </strong>{project.createdAt.slice(0, 10)}</p>
                                 </div>
                             </div></Link>
                         : <></>))}

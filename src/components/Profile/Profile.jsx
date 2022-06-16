@@ -22,16 +22,10 @@ const Profile = () => {
                 setCurrentUserInfo(res.data)
             })
         }, 1000);
-        /* SET VALUES FOR PROFILE TO DISPLAY IN PLACEHOLDER */
-        setProfileLanguages(currentUserInfo.languages)
-        setProfileTech(currentUserInfo.technologies)
-        setProfileWebsite(currentUserInfo.website)
-        setProfileSkills(currentUserInfo.skills)
-        setProfileDesc(currentUserInfo.description)
+
 
     }, [])
 
-    console.log(currentUserInfo);
     /* HANDLE PROFILE UPDATE */
     const handleUpdateProfile = (e) => {
         e.preventDefault()

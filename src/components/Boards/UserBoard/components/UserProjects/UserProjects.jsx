@@ -34,7 +34,6 @@ const UserProjects = () => {
         ProjectService.deleteProjectById(id)
     }
 
-    console.log(currentUser);
     return (
         <div className="user-projects-section"><h5>User Projects</h5>{message}
             <div className='user-projects'>{currentUser ? (

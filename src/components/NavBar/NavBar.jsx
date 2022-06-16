@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import AuthService from "../../services/auth.service";
 import "./styles.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/js/dist/collapse";
 
 const NavBar = () => {
     const [showModBoard, setShowModBoard] = useState(false);

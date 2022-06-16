@@ -3,7 +3,7 @@
     background-color: var(--primary-dark);
     padding: 0.3rem;
     border-radius: 5px;
-    box-shadow: 0px 0px 4px black;
+    box-shadow: 0px 0px 10px black;
     display: flex;
     flex-wrap: wrap;
 

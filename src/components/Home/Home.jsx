@@ -205,7 +205,7 @@ const Home = () => {
                             projects.slice(-4).map((project, index) => (
                                 <div
                                     className="project"
-                                    key={project.id}
+                                    key={project._id}
                                     style={{
                                         background:
                                             project.id % 2 === 0
