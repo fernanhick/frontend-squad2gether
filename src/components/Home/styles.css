@@ -44,7 +44,23 @@
 .register-btn:hover {
     background-color: rgb(179, 244, 255);
 }
+.sideline {
+    content: '';
+    position: absolute;
+    width: 0.1em;
+    height: 0.5em;
+    background: rgb(147, 248, 255);
+    top: 10px;
+    left: 0.2rem;
+    z-index: 22;
+    max-height: 100%;
+}
 
+@media screen and (min-width: 500px) {
+    .sideline {
+        left: 2rem;
+    }
+}
 .left-side {
     display: flex;
     flex: 1 1 0;

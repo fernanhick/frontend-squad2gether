@@ -26,7 +26,7 @@ const NavBar = () => {
         <nav className="navbar navbar-expand-lg  navbar-dark sticky-top">
             {" "}
             <div className="container-fluid">
-                <Link to={"/"} className="navbar-brand">
+                <Link to={'/home'} className="navbar-brand">
                     <span> SquadHunt</span>
                 </Link>
                 <button

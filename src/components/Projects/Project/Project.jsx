@@ -57,7 +57,6 @@ const Project = () => {
     const unLikeProject = (e) => {
         ProjectService.unLikeProjectById(e)
     }
-    console.log(project);
     return (
         <div className="project-page-section">
             <div className="project-page-wrapper">

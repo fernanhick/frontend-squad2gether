@@ -1,0 +1,15 @@
+.foot-bar {
+    height: 2em;
+    width: 100%;
+    background-color: var(--primary-dark);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5vw;
+    font-size: 1.1em;
+    color: white;
+}
+.logo {
+    font-size: 1.1em;
+    text-transform: uppercase;
+}

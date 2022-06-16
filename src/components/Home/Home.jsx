@@ -29,6 +29,11 @@ const Home = () => {
     });
     const { ref: topPage, inView: topVisible } = useInView();
     const [projects, setProjects] = useState("");
+
+    const [offSetY, setOffsetY] = useState(0)
+    const handleScroll = () => setOffsetY(window.pageYOffset)
+
+
     useEffect(() => {
         setInterval(() => {
             ProjectService.getProjects().then(
@@ -46,17 +51,21 @@ const Home = () => {
             );
         }, 2000);
 
+        window.addEventListener('scroll', handleScroll)
+
+        return () => window.removeEventListener('scroll', handleScroll)
     }, []);
     return (
         <div className="home-page">
+            <span className='sideline' style={{ height: `${offSetY * 0.089}rem` }}></span>
             <div className="top-page" ref={topPage}></div>
             <div className={`up-button ${!topVisible ? "show-up-btn" : ""}`}>
                 <a href="#">
                     <FaArrowAltCircleUp />
                 </a>
             </div>
-            <section className="hero-section section">
-                <div
+            <section className="hero-section section" >
+                <div style={{ transform: `translateY(${offSetY * 0.10}px)` }}
                     ref={myRef}
                     className={`hero-wrapper ${wrapperVisible ? "showSection" : ""
                         }`}
@@ -259,11 +268,7 @@ const Home = () => {
                     <div className="create-section-right"></div>{" "}
                 </div>
             </section>
-            <footer>
-                <a href="https://www.freepik.com/vectors/laptop-cartoon">
-                    Laptop cartoon vector created by jcomp - www.freepik.com
-                </a>
-            </footer>
+
         </div>
     );
 };

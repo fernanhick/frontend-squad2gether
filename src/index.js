@@ -12,6 +12,7 @@ import Projects from './components/Projects/Projects'
 import Project from './components/Projects/Project/Project'
 import NavBar from './components/NavBar/NavBar'
 import About from './components/About/About'
+import FootBar from './components/FootBar/FootBar'
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
@@ -30,6 +31,7 @@ root.render(
             <Route path='projects' element={<Projects />} />
             <Route path='project/:id' element={<Project />} />
         </Routes>
+        <FootBar />
     </BrowserRouter>
     // </React.StrictMode>
 )
