@@ -20,7 +20,7 @@ const About = () => {
 
                     </div>
                     <div className="profile-desc">
-                        <p>Look for projects of interest and add comment so you can get in contact with the other users related to the project, you can delete any comments you have posted and like the Project post.</p><img src={profileImage} alt="create new posts for your project" />
+                        <p>Setup your profile so other users can look at you info and contact you based on your skill and experience. Include all your details so you can show what youre made of and start collaborating today.</p><img src={profileImage} alt="create new posts for your project" />
 
                     </div>
                 </div>

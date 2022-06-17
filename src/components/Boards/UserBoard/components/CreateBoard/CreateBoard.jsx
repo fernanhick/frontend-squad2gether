@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import Form from "react-validation/build/form";
 import Input from "react-validation/build/input";
 import Textarea from "react-validation/build/textarea";
@@ -6,15 +6,14 @@ import CheckButton from "react-validation/build/button";
 
 import "./styles.css";
 import ProjectService from '../../../../../services/project.service';
-import AuthService from '../../../../../services/auth.service';
 
-const required = (value) => {
+/* const required = (value) => {
     if (!value) {
         return (
             <div className="alert alert-danger">This field is required!</div>
         )
     }
-};
+}; */
 const CreateBoard = () => {
 
     const form = useRef();
@@ -25,7 +24,6 @@ const CreateBoard = () => {
     const [technologies, setTechnologies] = useState("");
     const [successfull, setSuccessfull] = useState(false);
     const [message, setMessage] = useState('')
-    const currentUser = AuthService.getCurrentUser()
 
     const handleOnchangeTitle = (e) => {
         const title = e.target.value;

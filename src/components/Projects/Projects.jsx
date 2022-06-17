@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { Link, Outlet } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import ProjectService from '../../services/project.service';
 import './styles.css'
 const Projects = () => {
     const [searchValue, setSearchValue] = useState('')
     const [projects, setProjects] = useState('')
-    const [message, setMessage] = useState('')
+    const [setMessage] = useState('')
     useEffect(() => {
         ProjectService.getProjects().then((response) => {
             setProjects(response.data)

@@ -55,7 +55,7 @@
 }
 .header-project > h5 {
     margin: 0;
-    font-size: 1.2em;
+    font-size: 1em;
 }
 .header-project {
     background: var(--primary-dark);
@@ -72,6 +72,7 @@
     margin: 0;
 }
 .project-container {
+    max-width: 800px;
     border-radius: 5px;
     overflow: hidden;
     background: rgb(245, 245, 245);

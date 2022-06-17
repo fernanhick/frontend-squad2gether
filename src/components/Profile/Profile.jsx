@@ -17,18 +17,30 @@ const Profile = () => {
 
     useEffect(() => {
         /* GET USER DATA FROM DATABASE */
+        handleDataLoading()
+
+        setProfileDesc(currentUserInfo.description)
+        setProfileLanguages(currentUserInfo.languages)
+        setProfileTech(currentUserInfo.technologies)
+        setProfileSkills(currentUserInfo.skills)
+        setProfileWebsite(currentUserInfo.website)
+
+    }, [])
+
+    const handleDataLoading = () => {
         UserService.getUserById(currentUser.id).then((res) => {
             setCurrentUserInfo(res.data)
         })
 
 
-    }, [])
+
+    }
 
     /* HANDLE PROFILE UPDATE */
-    const handleUpdateProfile = (e) => {
+    const handleUpdateProfile = async (e) => {
         e.preventDefault()
 
-        UserService.updateUser(currentUser.id,
+        await UserService.updateUser(currentUser.id,
             profileLanguages,
             profileTech,
             profileSkills,
@@ -37,6 +49,8 @@ const Profile = () => {
             }, (error) => {
                 console.log(error)
             }))
+
+        handleDataLoading()
 
     }
     /* HANDLE FIELDS VALUE IN FORM */
