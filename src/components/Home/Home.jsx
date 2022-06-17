@@ -4,8 +4,7 @@ import { useInView } from "react-intersection-observer";
 import { Link } from "react-router-dom";
 import { FaArrowAltCircleUp } from "react-icons/fa";
 import ProjectService from "../../services/project.service";
-/* import UserService from "../../services/user.service";
- */
+import createImage from '../../images/create-post.png'
 import("./styles.css");
 const search = require("../../images/search.png");
 const create = require("../../images/create.png");
@@ -262,8 +261,8 @@ const Home = () => {
             </section>
             <section className="create-section">
                 <div className="create-section-wrapper">
-                    <div className="create-section-left"></div>
-                    <div className="create-section-right"></div>{" "}
+                    <div className="create-section-left"><img src={createImage} alt="" /></div>
+                    <div className="create-section-right"><p>Register today and create a new Project post and start getting messages from other users and colaborate.</p></div>{" "}
                 </div>
             </section>
 
