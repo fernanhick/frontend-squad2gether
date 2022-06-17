@@ -16,6 +16,7 @@ const Projects = () => {
         })
     }, [])
 
+
     const handleSearchChange = (e) => {
         const value = e.target.value
         setSearchValue(value)

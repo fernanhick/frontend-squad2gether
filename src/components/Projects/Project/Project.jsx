@@ -17,6 +17,14 @@ const Project = () => {
     const user = AuthService.getCurrentUser()
     const commentRef = useRef()
     useEffect(() => {
+        handleDataLoading()
+        setTimeout(() => {
+            handleDataLoading()
+        }, 5000);
+
+
+    }, [])
+    const handleDataLoading = () => {
         ProjectService.getProjectById(params.id).then((res) => {
             setProject(res.data)
         }, (error) => {
@@ -24,10 +32,7 @@ const Project = () => {
                 (error.response && error.response.data && error.response.data.message) || error.message || error.toString()
             setMessage(message)
         })
-
-
-    }, [])
-
+    }
     const handleNewComment = (e) => {
         const comment = e.target.value
         setNewComment(comment)
@@ -39,6 +44,7 @@ const Project = () => {
         Commentservice.postComment(params.id, newComment).then((response) => {
             setNewComment('')
             setSuccessful(true)
+            handleDataLoading()
         }, (error) => {
             const rMessage = (error.response && error.response.data && error.response.data.message) || error.message || error.toString()
             setSuccessful(false)
@@ -46,14 +52,19 @@ const Project = () => {
         })
 
     }
-    const deletecomment = (e) => {
-        Commentservice.deleteComment(e)
+    const deletecomment = async (e) => {
+        await Commentservice.deleteComment(e)
+        handleDataLoading()
+
     }
-    const likeProject = (e) => {
-        ProjectService.likeProjectById(e)
+    const likeProject = async (e) => {
+        await ProjectService.likeProjectById(e)
+        handleDataLoading()
     }
-    const unLikeProject = (e) => {
-        ProjectService.unLikeProjectById(e)
+    const unLikeProject = async (e) => {
+        await ProjectService.unLikeProjectById(e)
+        handleDataLoading()
+
     }
     return (
         <div className="project-page-section">
