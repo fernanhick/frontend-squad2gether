@@ -16,12 +16,10 @@ const Profile = () => {
     const profileForm = useRef()
 
     useEffect(() => {
-        setInterval(() => {
-            /* GET USER DATA FROM DATABASE */
-            UserService.getUserById(currentUser.id).then((res) => {
-                setCurrentUserInfo(res.data)
-            })
-        }, 1000);
+        /* GET USER DATA FROM DATABASE */
+        UserService.getUserById(currentUser.id).then((res) => {
+            setCurrentUserInfo(res.data)
+        })
 
 
     }, [])

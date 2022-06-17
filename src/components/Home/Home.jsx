@@ -35,21 +35,19 @@ const Home = () => {
 
 
     useEffect(() => {
-        setInterval(() => {
-            ProjectService.getProjects().then(
-                (response) => {
-                    setProjects(response.data)
-                },
-                (error) => {
-                    const _project =
-                        (error.response &&
-                            error.response.data &&
-                            error.response.data.message) ||
-                        (error.message && error.toString());
-                    setProjects(_project);
-                }
-            );
-        }, 2000);
+        ProjectService.getProjects().then(
+            (response) => {
+                setProjects(response.data)
+            },
+            (error) => {
+                const _project =
+                    (error.response &&
+                        error.response.data &&
+                        error.response.data.message) ||
+                    (error.message && error.toString());
+                setProjects(_project);
+            }
+        );
 
         window.addEventListener('scroll', handleScroll)
 

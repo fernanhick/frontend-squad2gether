@@ -17,15 +17,13 @@ const Project = () => {
     const user = AuthService.getCurrentUser()
     const commentRef = useRef()
     useEffect(() => {
-        setInterval(() => {
-            ProjectService.getProjectById(params.id).then((res) => {
-                setProject(res.data)
-            }, (error) => {
-                const message =
-                    (error.response && error.response.data && error.response.data.message) || error.message || error.toString()
-                setMessage(message)
-            })
-        }, 1000);
+        ProjectService.getProjectById(params.id).then((res) => {
+            setProject(res.data)
+        }, (error) => {
+            const message =
+                (error.response && error.response.data && error.response.data.message) || error.message || error.toString()
+            setMessage(message)
+        })
 
 
     }, [])

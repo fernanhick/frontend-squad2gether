@@ -2,8 +2,8 @@ import axios from 'axios'
 // Import the auth-header.js so we can use whenever there is any access that requires authorization
 import authHeader from './auth-header'
 
-const API_URL = 'http://localhost:8080/api/test/'
-const API_URL_USER = 'http://localhost:8080/api/v1/user/'
+const API_URL = `${process.env.REACT_APP_HOST}api/test/`
+const API_URL_USER = `${process.env.REACT_APP_HOST}api/v1/user/`
 
 // Get the public content hitting the URL without any auth-header
 const getPublicContent = () => {

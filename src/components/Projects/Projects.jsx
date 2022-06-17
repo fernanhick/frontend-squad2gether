@@ -7,15 +7,13 @@ const Projects = () => {
     const [projects, setProjects] = useState('')
     const [message, setMessage] = useState('')
     useEffect(() => {
-        setInterval(() => {
-            ProjectService.getProjects().then((response) => {
-                setProjects(response.data)
-            }, (error) => {
-                const message =
-                    (error.response && error.response.data && error.response.data.message) || error.message || error.toString()
-                setMessage(message)
-            })
-        }, 1000)
+        ProjectService.getProjects().then((response) => {
+            setProjects(response.data)
+        }, (error) => {
+            const message =
+                (error.response && error.response.data && error.response.data.message) || error.message || error.toString()
+            setMessage(message)
+        })
     }, [])
 
     const handleSearchChange = (e) => {

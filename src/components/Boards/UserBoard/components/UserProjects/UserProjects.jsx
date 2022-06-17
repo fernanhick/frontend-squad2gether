@@ -12,21 +12,19 @@ const UserProjects = () => {
     const [currentUser, setCurretUser] = useState('')
     const [message, setMessage] = useState('')
     useEffect(() => {
-        setInterval(() => {
-            UserService.getUserById(user.id).then(
-                (response) => {
-                    setCurretUser(response.data)
-                },
-                (error) => {
-                    const _project =
-                        (error.response &&
-                            error.response.data &&
-                            error.response.data.message) ||
-                        error.message || error.toString();
-                    setMessage(_project);
-                }
-            );
-        }, 1000);
+        UserService.getUserById(user.id).then(
+            (response) => {
+                setCurretUser(response.data)
+            },
+            (error) => {
+                const _project =
+                    (error.response &&
+                        error.response.data &&
+                        error.response.data.message) ||
+                    error.message || error.toString();
+                setMessage(_project);
+            }
+        );
     }, []);
     let projectIT = 0
 
