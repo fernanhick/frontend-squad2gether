@@ -262,7 +262,9 @@ const Home = () => {
             <section className="create-section">
                 <div className="create-section-wrapper">
                     <div className="create-section-left"><img src={createImage} alt="" /></div>
-                    <div className="create-section-right"><p>Register today and create a new Project post and start getting messages from other users and colaborate.</p></div>{" "}
+                    <div className="create-section-right"><p>Register today and create a new Project post for people to find and connect, get comments through your post and find the right people to collaborate today for your dream Project.</p> <Link className="register-btn" to={"/register"}>
+                        Start Today
+                    </Link></div>{" "}
                 </div>
             </section>
 
