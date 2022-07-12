@@ -9,7 +9,7 @@ import("./styles.css");
 const search = require("../../images/search.png");
 const create = require("../../images/create.png");
 const connect = require("../../images/connect.png");
-const heroImage = require("../../images/hero-team.jpg");
+const heroImage = require("../../images/hero-team.webp");
 const Home = () => {
     const { ref: myRef, inView: wrapperVisible } = useInView({
         triggerOnce: true,
@@ -54,7 +54,6 @@ const Home = () => {
     }, []);
     return (
         <div className="home-page">
-            <span className='sideline' style={{ height: `${offSetY * 0.089}rem` }}></span>
             <div className="top-page" ref={topPage}></div>
             <div className={`up-button ${!topVisible ? "show-up-btn" : ""}`}>
                 <a href="#">
@@ -62,7 +61,7 @@ const Home = () => {
                 </a>
             </div>
             <section className="hero-section section" >
-                <div style={{ transform: `translateY(${offSetY * 0.10}px)` }}
+                <div style={{ transform: `translateY(${offSetY * 0.05}px)` }}
                     ref={myRef}
                     className={`hero-wrapper ${wrapperVisible ? "showSection" : ""
                         }`}

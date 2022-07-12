@@ -3,7 +3,7 @@
 /* *********   HERO SECTION STYLING *****************/
 .hero-section {
     background-color: var(--primary-dark);
-    background-image: url('../../images/back-city.jpg');
+    background-image: url('../../images/back-city.webp');
     background-size: cover;
     background-blend-mode: luminosity;
     display: flex;
@@ -369,6 +369,11 @@
 .home-page {
     position: relative;
 }
+@media screen and (max-width: 600px) {
+    .up-button > a > svg {
+        font-size: 2.5rem;
+    }
+}
 
 /* ********* CREATE SECTION ************** */
 .create-section {
@@ -382,6 +387,7 @@
     display: flex;
     flex-wrap: wrap;
     overflow: hidden;
+    box-shadow: 0 0 10px black;
 }
 .create-section-wrapper > * {
     flex: 1 0 0;
