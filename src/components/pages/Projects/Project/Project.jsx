@@ -1,8 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { useParams } from 'react-router-dom'
-import AuthService from '../../../services/auth.service'
-import Commentservice from '../../../services/comment.service'
-import ProjectService from '../../../services/project.service'
+import AuthService from '../../../../services/auth.service'
+import Commentservice from '../../../../services/comment.service'
+import ProjectService from '../../../../services/project.service'
 import { FaRegTimesCircle } from "react-icons/fa";
 import { BiLike } from "react-icons/bi";
 

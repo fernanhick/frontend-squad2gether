@@ -1,8 +1,8 @@
 import React from 'react'
-import createImage from '../../images/create-post.png'
-import searchImage from '../../images/search-posts.png'
-import commentImage from '../../images/comment-posts.png'
-import profileImage from '../../images/profile-desc.png'
+import createImage from '../../../images/create-post.png'
+import searchImage from '../../../images/search-posts.png'
+import commentImage from '../../../images/comment-posts.png'
+import profileImage from '../../../images/profile-desc.png'
 import './styles.css'
 const About = () => {
     return (

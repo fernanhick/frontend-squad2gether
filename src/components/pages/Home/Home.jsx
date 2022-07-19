@@ -3,13 +3,13 @@ import React, { useState, useEffect } from "react";
 import { useInView } from "react-intersection-observer";
 import { Link } from "react-router-dom";
 import { FaArrowAltCircleUp } from "react-icons/fa";
-import ProjectService from "../../services/project.service";
-import createImage from '../../images/create-post.png'
+import ProjectService from "../../../services/project.service";
+import createImage from '../../../images/create-post.png'
 import("./styles.css");
-const search = require("../../images/search.png");
-const create = require("../../images/create.png");
-const connect = require("../../images/connect.png");
-const heroImage = require("../../images/hero-team.webp");
+const search = require("../../../images/search.png");
+const create = require("../../../images/create.png");
+const connect = require("../../../images/connect.png");
+const heroImage = require("../../../images/hero-team.webp");
 const Home = () => {
     const { ref: myRef, inView: wrapperVisible } = useInView({
         triggerOnce: true,

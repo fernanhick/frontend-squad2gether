@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from 'react-router-dom';
-import ProjectService from '../../services/project.service';
+import ProjectService from '../../../services/project.service';
 import './styles.css'
 const Projects = () => {
     const [searchValue, setSearchValue] = useState('')

@@ -5,7 +5,7 @@ import Textarea from "react-validation/build/textarea";
 import CheckButton from "react-validation/build/button";
 
 import "./styles.css";
-import ProjectService from '../../../../../services/project.service';
+import ProjectService from '../../../../../../services/project.service';
 
 /* const required = (value) => {
     if (!value) {

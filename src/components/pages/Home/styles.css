@@ -3,7 +3,7 @@
 /* *********   HERO SECTION STYLING *****************/
 .hero-section {
     background-color: var(--primary-dark);
-    background-image: url('../../images/back-city.webp');
+    background-image: url('../../../images/back-city.webp');
     background-size: cover;
     background-blend-mode: luminosity;
     display: flex;
