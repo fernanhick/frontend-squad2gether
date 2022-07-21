@@ -13,6 +13,7 @@ import Project from './components/pages/Projects/Project/Project'
 import NavBar from './components/utils/NavBar/NavBar'
 import About from './components/pages/About/About'
 import FootBar from './components/utils/FootBar/FootBar'
+import Users from './components/pages/Users/Users'
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
@@ -27,6 +28,7 @@ root.render(
             <Route path='register' element={<Register />} />
             <Route path='about' element={<About />} />
             <Route path='profile' element={<Profile />} />
+            <Route path='users' element={<Users />} />
             <Route path='user' element={<UserBoard />} />
             <Route path='projects' element={<Projects />} />
             <Route path='project/:id' element={<Project />} />
