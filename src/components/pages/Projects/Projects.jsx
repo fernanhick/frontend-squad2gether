@@ -14,7 +14,7 @@ const Projects = () => {
                 (error.response && error.response.data && error.response.data.message) || error.message || error.toString()
             setMessage(message)
         })
-    }, [])
+    }, [setMessage])
 
 
     const handleSearchChange = (e) => {
@@ -49,12 +49,7 @@ const Projects = () => {
                             </div></Link>
                         : <></>))}
             </div>
-
-
-
-
-            {/*             <Outlet />
- */}        </div>
+        </div>
     </div >;
 };
 export default Projects;
