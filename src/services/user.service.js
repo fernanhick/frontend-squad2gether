@@ -23,6 +23,9 @@ const getAdminBoard = () => {
 const getUserById = (id) => {
     return axios.get(API_URL_USER + id)
 }
+const getUsers = () => {
+    return axios.get(API_URL_USER + 's')
+}
 
 const updateUser = (id, lang, tech, skills, web, desc) => {
     return axios.patch(API_URL_USER + id, {
@@ -41,5 +44,6 @@ const UserService = {
     getAdminBoard,
     getUserById,
     updateUser,
+    getUsers,
 }
 export default UserService
