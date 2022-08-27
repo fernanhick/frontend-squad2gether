@@ -7,6 +7,7 @@ import UserSearchBar from './UserSearchBar/UserSearchBar'
 const Users = () => {
     const [users, setUsers] = useState([])
     const [search, setSearch] = useState([])
+    const [value, setValue] = useState([])
 
     useEffect(() => {
 
@@ -17,10 +18,17 @@ const Users = () => {
             });
     }, [])
 
+    useEffect(() => {
+
+        const val = search.filter((e) => e.username == search)
+        setValue(val)
+    }, [search])
+
     const handleSearch = (event, input) => {
         event.preventDefault()
         setSearch(input)
         console.log(input)
+
     }
 
     return (
@@ -29,7 +37,7 @@ const Users = () => {
             {/*             {users && users.map((user) => (<div>{user.username}</div>))}
             
  */} <UserSearchBar handleSearch={handleSearch} />
-            <UserList userlist={search} />
+            <UserList userlist={value} />
             {/* 1. Parent Component For users Display */}
             {/* 2. Child Components for  Users List
                 ¬ Child component User List --> SearchBar
