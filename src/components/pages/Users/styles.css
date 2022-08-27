@@ -1,3 +1,4 @@
 .users_main_section {
     background-color: aqua;
+    min-height: 100vh;
 }
