@@ -14,6 +14,7 @@ import NavBar from './components/utils/NavBar/NavBar'
 import About from './components/pages/About/About'
 import FootBar from './components/utils/FootBar/FootBar'
 import Users from './components/pages/Users/Users'
+import UserProfile from './components/pages/Users/UserProfile/UserProfile'
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
@@ -30,6 +31,7 @@ root.render(
             <Route path='profile' element={<Profile />} />
             <Route path='users' element={<Users />} />
             <Route path='user' element={<UserBoard />} />
+            <Route path='userprofile/:id' element={<UserProfile />} />
             <Route path='projects' element={<Projects />} />
             <Route path='project/:id' element={<Project />} />
         </Routes>

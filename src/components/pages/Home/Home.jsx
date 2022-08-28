@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { FaArrowAltCircleUp } from "react-icons/fa";
 import ProjectService from "../../../services/project.service";
 import createImage from '../../../images/create-post.png'
+import SearchBar from '../../utils/SearchBar/SearchBar';
 import("./styles.css");
 const search = require("../../../images/search.png");
 const create = require("../../../images/create.png");
@@ -54,6 +55,7 @@ const Home = () => {
     }, []);
     return (
         <div className="home-page">
+
             <div className="top-page" ref={topPage}></div>
             <div className={`up-button ${!topVisible ? "show-up-btn" : ""}`}>
                 <a href="#">
@@ -61,6 +63,8 @@ const Home = () => {
                 </a>
             </div>
             <section className="hero-section section" >
+                <SearchBar placeholder="Enter a Book Name..." data={projects} />
+
                 <div style={{ transform: `translateY(${offSetY * 0.05}px)` }}
                     ref={myRef}
                     className={`hero-wrapper ${wrapperVisible ? "showSection" : ""

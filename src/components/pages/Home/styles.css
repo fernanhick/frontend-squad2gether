@@ -7,6 +7,7 @@
     background-size: cover;
     background-blend-mode: luminosity;
     display: flex;
+    flex-direction: column;
     position: relative;
     overflow: hidden;
 }

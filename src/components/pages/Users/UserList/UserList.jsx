@@ -7,7 +7,6 @@ function UserList({ userlist }) {
             <h1>{user.username}</h1>
         ))} */}
 
-        {userList ? 'hello' : 'no users'}
     </>
 
     )
