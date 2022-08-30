@@ -13,7 +13,7 @@ function SearchBar({ placeholder, data }) {
         const newFilter = data.filter((value) => {
             return value.title.toLowerCase().includes(searchWord.toLowerCase());
         });
-
+        console.log(window.location.host)
         if (searchWord === "") {
             setFilteredData([]);
         } else {
@@ -47,7 +47,7 @@ function SearchBar({ placeholder, data }) {
                 <div className="dataResult">
                     {filteredData.slice(0, 15).map((value, key) => {
                         return (
-                            <a className="dataItem" href={`http://localhost:8081/project/${value._id}`} target="_blank">
+                            <a className="dataItem" href={`${toString(window.location.host)}/project/${value._id}`} target="_blank">
                                 <p>{value.title} </p>
                                 <p>{value.title} </p>
                             </a>
